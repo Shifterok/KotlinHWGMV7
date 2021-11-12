@@ -1,6 +1,8 @@
 package homework6.service
 
+import homework6.data.Comment
 import homework6.data.Post
+import homework6.data.attachmentable.exeptionsClass.PostNotFoundException
 import org.junit.jupiter.api.Assertions.*
 import org.junit.jupiter.api.Test
 
@@ -26,5 +28,12 @@ class WallServiceTest {
     fun update_areThisNotUpdate() {
         val wallService = WallService()
         assertFalse(wallService.update(Post()))
+    }
+
+    @Test(expected = PostNotFoundException::class)
+    fun shouldThrow() {
+        val wallService = WallService()
+        wallService.add(Post())
+        wallService.createComment(Comment(2))
     }
 }

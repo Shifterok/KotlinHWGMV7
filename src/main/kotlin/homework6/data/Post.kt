@@ -1,5 +1,5 @@
 package homework6.data
-import homework6.data.attachmentable.AttachmentableInterface
+import homework6.data.attachmentable.Attachment
 import homework6.data.attachmentable.PhotoAttachment
 import homework6.data.attachmentable.PostSource
 
@@ -20,7 +20,7 @@ data class Post(
     val views: Any = 45,
     val postType: String = "тип поста",
     val postSource: PostSource = PostSource(),
-    val attachment: AttachmentableInterface = PhotoAttachment(),
+    val attachment: List<Attachment>? = listOf<Attachment>(), //Нулябле
     val geo: String = "Где то там далеко, далеко",
     val signerId: Int = 50,
     val copyHistory: List<Post>? = listOf<Post>(), //Нулябле

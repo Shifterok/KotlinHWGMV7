@@ -10,4 +10,4 @@ data class PhotoAttachment(
     val date: Int = 0,
     val width: Int = 0,
     val height: Int = 0,
-) : AttachmentableInterface
+) : Attachment

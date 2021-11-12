@@ -7,7 +7,7 @@ data class PostSource(
     val platform: String = "андроид, только андроид!!!",
     val date: Int = 1,
     val url: String = "ссылка куда то"
-) : AttachmentableInterface {
+) : Attachment {
     override val id: Int
         get() = TODO("Not yet implemented")
     override val idOwner: Int

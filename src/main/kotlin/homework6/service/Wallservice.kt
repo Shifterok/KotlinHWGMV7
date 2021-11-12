@@ -1,5 +1,7 @@
 package homework6.service
+import homework6.data.Comment
 import homework6.data.Post
+import homework6.data.attachmentable.exeptionsClass.PostNotFoundException
 
 class WallService {
 
@@ -24,4 +26,14 @@ class WallService {
         }
         return false
     }
+    private var comments = emptyArray<Comment>()
+
+    fun createComment(comment: Comment) {
+        if (posts.isEmpty()) {
+            throw PostNotFoundException()
+        } else {
+            comments = comments.plus(comment)
+        }
+    }
+
 }
