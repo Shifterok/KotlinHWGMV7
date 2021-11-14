@@ -30,10 +30,10 @@ class WallServiceTest {
         assertFalse(wallService.update(Post()))
     }
 
-    @Test(expected = PostNotFoundException::class)
+    @Test(expected = PostNotFoundException::class) // Но вот тут я не понимаю почему expexted дает ошибку
     fun shouldThrow() {
         val wallService = WallService()
         wallService.add(Post())
-        wallService.createComment(Comment(2))
+        wallService.createNewComment(Comment(2))
     }
 }
