@@ -12,5 +12,7 @@ data class Comment (
     val replyToComment: Int = -1,
     val attachments:Array<Attachment> = emptyArray(),
     val parentsStack: Array<Int> = emptyArray(),
-    val thread: ThreadInComment =ThreadInComment()
+    val thread: ThreadInComment =ThreadInComment(),
+    var isDeleted: Boolean = false,
+    val ownerId: Int = 0
 )
